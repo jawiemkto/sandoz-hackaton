@@ -1,0 +1,23 @@
+{
+  "name": "s-hackaton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jawiemkto/s-hackaton.git"
+  },
+  "author": "Skronski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jawiemkto/s-hackaton/issues"
+  },
+  "homepage": "https://github.com/jawiemkto/s-hackaton#readme",
+  "dependencies": {
+    "puppeteer": "^4.0.1"
+  }
+}
