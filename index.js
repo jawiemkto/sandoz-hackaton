@@ -30,11 +30,11 @@ exports.delay = delay;
         });
 
         const page = await browser.newPage();
-        // const navigation = page.waitForNavigation({
-        //     waitUntil: 'networkidle0',
-        // });
+        const navigation = page.waitForNavigation({
+            waitUntil: 'networkidle0',
+        });
 
-        await medicine_uk_org.runScript();
+        await medicine_uk_org.runScript(page, navigation, delay, date);
 
 
         await browser.close();
