@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
 const config = require('./config');
+const medicine_uk_org = require('./medicines_org_uk_module/med_uk_index')
 
 const date = new Date().toISOString().substring(0, 10);
 
@@ -11,7 +12,7 @@ exports.delay = delay;
 (async () => {
     try {
 
-        console.log('Script start');
+        console.log('Run main script');
 
         const browser = await puppeteer.launch({
             headless: false,
@@ -29,12 +30,17 @@ exports.delay = delay;
         });
 
         const page = await browser.newPage();
-        const navigation = page.waitForNavigation({
-            waitUntil: 'networkidle0',
-        });} catch(err) {
+        // const navigation = page.waitForNavigation({
+        //     waitUntil: 'networkidle0',
+        // });
+
+        await medicine_uk_org.runScript();
+
+
+        await browser.close();
+        console.log("Processed finished")
+
+    } catch(err) {
         console.log('error', err);
     }
 })();
-
-
-// "medicines.org.uk"
