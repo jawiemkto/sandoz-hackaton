@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/jawiemkto/s-hackaton#readme",
   "dependencies": {
+    "csv-parser": "^2.3.3",
+    "csv-writer": "^1.6.0",
     "puppeteer": "^4.0.1"
   }
 }

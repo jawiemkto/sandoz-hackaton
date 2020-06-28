@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const config = require('./config');
-const medicine_uk_org = require('./medicines_org_uk_module/med_uk_index')
+const medicine_uk_org = require('./medicines_org_uk_module/med_uk_index');
+const clinicaltrails_gov = require('./clinicaltrials_gov_module/clinicaltrails_gov_index')
 
 const date = new Date().toISOString().substring(0, 10);
 
@@ -34,8 +35,8 @@ exports.delay = delay;
             waitUntil: 'networkidle0',
         });
 
+        await clinicaltrails_gov.runScript(page,navigation, delay, date);
         await medicine_uk_org.runScript(page, navigation, delay, date);
-
 
         await browser.close();
         console.log("Processed finished")
